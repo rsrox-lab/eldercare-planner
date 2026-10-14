@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ElderCare Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>ElderCare Planner</h1>
+        <p>Carpe diem! Organise your day and enjoy it!</p>
+    </header>
+
+    <section>
+        <h2>Welcome!</h2>
+        <p>What is your name?</p>
+        <input  id="nameInput" type="text" placeholder="Enter your name">
+        <button onclick="saveName()">Continue</button>
+        <p id="welcomeMessage"></p></section>
+    <main>
+
+        <section>
+            <h2>Today's Tasks</h2>
+            <div id="taskList">
+            <div class="task">
+                <span>Morning walk — 9:00 AM</span>
+                <button onclick="completeTask(this)">Done</button>
+            </div>
+
+            <div class="task">
+                <span>Doctor appointment — 4:00 PM</span>
+                <button onclick="completeTask(this)">Done</button>
+            </div>
+            </div>
+            <p id="progressText">Today's progress: 0 of 2 tasks completed</p>
+            <button onclick="showProgress()">Show my Progress</button>
+            <p id="progressMessage"></p>
+
+        </section>
+
+        <section>
+            <h2>Add a Task</h2>
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task"
+            >
+
+            <input
+                type="time"
+                id="taskTime"
+            >
+
+            <label for="taskRepeat">Repeat:</label>
+            <select id="taskRepeat">
+            <option value="once">One-time</option>
+            <option value="daily">Daily</option>
+            </select>
+
+            
+         <label for="taskCategory">Category:</label>
+         <select id="taskCategory">
+         <option value="medicine">Medicine</option>
+         <option value="exercise">Exercise</option>
+         <option value="meals">Meals</option>
+         <option value="personal-care">Personal Care</option>
+         <option value="appointments">Appointments</option>
+         <option value="other">Other</option>
+         </select>
+
+
+            <button onclick="addTask()">Add Task</button>
+
+        </section>
+
+        <section>
+            <h2>Appointments</h2>
+
+            <p>No upcoming appointments.</p>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
